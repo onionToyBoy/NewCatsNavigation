@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import FirstScreen from './screens/FirstScreen';
-import SecondScreen from './screens/SecondScreen';
+import MainScreen from './screens/MainScreen';
+import DetailScreen from './screens/DetailScreen';
 
 const Stack = createStackNavigator();
 
@@ -12,7 +12,7 @@ function MyStack() {
       <Stack.Navigator>
         <Stack.Screen
           name='Main'
-          component={FirstScreen}
+          component={MainScreen}
           options={{
             headerTitleAlign: 'center',
             headerStyle: {
@@ -22,7 +22,7 @@ function MyStack() {
         />
         <Stack.Screen
           name='Info'
-          component={SecondScreen}
+          component={DetailScreen}
           options={{
             headerTitleAlign: 'center',
             headerStyle: {

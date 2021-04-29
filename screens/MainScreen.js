@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-const FirstScreen = ({ navigation }) => {
+const MainScreen = ({ navigation }) => {
   const goToSecond = () => {
     navigation.navigate('Info');
   };
@@ -25,4 +25,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default FirstScreen;
+export default MainScreen;
