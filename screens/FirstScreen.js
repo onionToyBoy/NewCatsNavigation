@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 
 const FirstScreen = ({ navigation }) => {
   const goToSecond = () => {
@@ -8,13 +9,14 @@ const FirstScreen = ({ navigation }) => {
 
   return (
     <TouchableOpacity onPress={() => goToSecond()}>
-      <Text style={styles.h1}>Навигация работает?</Text>
+      <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']}>
+        <Text style={styles.h1}>Навигация работает?</Text>
+      </LinearGradient>
     </TouchableOpacity>
   );
 };
 const styles = StyleSheet.create({
   h1: {
-    backgroundColor: '#FFB9DEFF',
     color: '#000',
     fontSize: 25,
     fontWeight: '700',
