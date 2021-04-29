@@ -1,27 +1,63 @@
-import React from 'react';
-import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
+import { Search } from '../components/Search';
+import { CatsGenerator } from '../components/CatsGenerator';
+import { state } from '../state';
+
 const MainScreen = ({ navigation }) => {
-  const goToSecond = () => {
-    navigation.navigate('Info');
+  const [cats, setCats] = useState(state);
+
+  //Функция перехода на другую страницу:
+
+  const goToCat = cat => {
+    navigation.navigate('Cat', { cat });
+  };
+
+  //Функция поиска по странице:
+
+  const searchCat = function (text) {
+    setCats(
+      state.filter(
+        el =>
+          el.name.toLowerCase().includes(text.toLowerCase()) ||
+          el.bread.toLowerCase().includes(text.toLowerCase()) ||
+          el.info.toLowerCase().includes(text.toLowerCase()),
+      ),
+    );
   };
 
   return (
-    <TouchableOpacity onPress={() => goToSecond()}>
-      <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']}>
-        <Text style={styles.h1}>Навигация работает?</Text>
+    <View style={styles.container}>
+      <LinearGradient colors={['#992C25FF', '#B5342CFF', '#520E0CFF']} style={styles.container}>
+        <SafeAreaView style={styles.container}>
+          <Text style={styles.header}>Hello, I am a Header!</Text>
+          <CatsGenerator cats={cats} goToCat={goToCat} />
+        </SafeAreaView>
       </LinearGradient>
-    </TouchableOpacity>
+      <Search searchCat={searchCat} />
+    </View>
   );
 };
+
 const styles = StyleSheet.create({
-  h1: {
-    color: '#000',
-    fontSize: 25,
-    fontWeight: '700',
-    padding: 30,
-    textAlign: 'center',
+  container: {
+    flex: 1,
+  },
+  header: {
+    alignItems: 'flex-start',
+    margin: 5,
+  },
+  search: {
+    height: 40,
+    width: '100%',
+    backgroundColor: '#FFFFFFAD',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: 'black',
+    paddingLeft: 8,
   },
 });
 
