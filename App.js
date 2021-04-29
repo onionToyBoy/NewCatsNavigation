@@ -1,12 +1,9 @@
-import 'react-native-gesture-handler'
-import React from 'react'
-import MyStack from './MyNavigator'
+import 'react-native-gesture-handler';
+import React from 'react';
+import MyStack from './MyNavigator';
 
-const App = ({navigation}) => {
+const App = () => {
+  return <MyStack />;
+};
 
-  return (
-       <MyStack/>
-  )
-}
-
-export default App
+export default App;

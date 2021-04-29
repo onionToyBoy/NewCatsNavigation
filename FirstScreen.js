@@ -1,21 +1,17 @@
-import React from 'react'
-import { StyleSheet, Text,TouchableOpacity} from 'react-native'
+import React from 'react';
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
-
-const FirstScreen = ({navigation}) => {
-
-const goToSecond= ()=>{
+const FirstScreen = ({ navigation }) => {
+  const goToSecond = () => {
     navigation.navigate('Info')
   }
 
   return (
- 
-    <TouchableOpacity onPress={()=>goToSecond()}>
+    <TouchableOpacity onPress={() => goToSecond()}>
       <Text style={styles.h1}>Навигация работает?</Text>
     </TouchableOpacity>
   )
 }
-
 const styles = StyleSheet.create({
   h1: {
     backgroundColor: '#FFB9DEFF',
@@ -23,8 +19,8 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: '700',
     padding: 30,
-    textAlign: 'center'
-  }
-})
+    textAlign: 'center',
+  },
+});
 
-export default FirstScreen
+export default FirstScreen;
