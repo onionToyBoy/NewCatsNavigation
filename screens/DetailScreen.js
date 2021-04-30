@@ -5,14 +5,13 @@ import LinearGradient from 'react-native-linear-gradient';
 import { InfoBlock } from '../components/InfoBlock';
 import { randomFactsGenerator } from '../randomFactsGenerator';
 
-const DetailScreen = ({  route ,navigation }) => {
-  const { cat } = route.params;
+const DetailScreen = ({ route }) => {
   return (
     <LinearGradient colors={['#152A57FF', '#373967FF', '#53223AFF']} style={styles.container}>
       <ScrollView style={styles.scroll}>
         <View style={styles.secondContainer}>
-          <Image source={JSON.stringify(cat).photo} style={styles.image} />
-          <InfoBlock cat={JSON.stringify(cat)} />
+          <Image source={route.params.cat.photo} style={styles.image} />
+          <InfoBlock cat={route.params.cat} />
           <View style={styles.randomFactsBlock}>
             <Text style={styles.randomFactsTitle}>Рандомный факт о котах:</Text>
             <Text style={styles.randomInfo}>{randomFactsGenerator.getRandomFact()}</Text>

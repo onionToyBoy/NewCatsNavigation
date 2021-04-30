@@ -16,7 +16,7 @@ function MyStack() {
           options={{
             headerTitleAlign: 'center',
             headerStyle: {
-              backgroundColor: '#7C42DCD0',
+              backgroundColor: '#E1DEDCFF',
             },
           }}
         />
@@ -24,9 +24,10 @@ function MyStack() {
           name='Cat'
           component={DetailScreen}
           options={{
+            title:'Кот',
             headerTitleAlign: 'center',
             headerStyle: {
-              backgroundColor: '#7C42DCD0',
+              backgroundColor: '#E1DEDCFF',
             },
           }}
         />
