@@ -1,35 +1,34 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import MainScreen from './screens/MainScreen';
-import DetailScreen from './screens/DetailScreen';
+import FirstScreen from './screens/FirstScreen';
+import SecondScreen from './screens/SecondScreen';
 
 const Stack = createStackNavigator();
 
 function MyStack() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Коты' >
+      <Stack.Navigator>
         <Stack.Screen
-          name='Коты'
-          component={MainScreen}
+          name='Main'
+          component={FirstScreen}
           options={{
             headerTitleAlign: 'center',
             headerStyle: {
-              backgroundColor: '#E1DEDCFF',
+              backgroundColor: '#7C42DCD0',
             },
           }}
         />
         <Stack.Screen
-          name='Cat'
-          component={DetailScreen}
-          options={({route})=>({
-            title:route.params.cat.name,
+          name='Info'
+          component={SecondScreen}
+          options={{
             headerTitleAlign: 'center',
             headerStyle: {
-              backgroundColor: '#E1DEDCFF',
+              backgroundColor: '#7C42DCD0',
             },
-          })}
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>
