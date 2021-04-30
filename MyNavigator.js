@@ -23,13 +23,13 @@ function MyStack() {
         <Stack.Screen
           name='Cat'
           component={DetailScreen}
-          options={{
-            title:'Кот',
+          options={({route})=>({
+            title:route.params.cat.name,
             headerTitleAlign: 'center',
             headerStyle: {
               backgroundColor: '#E1DEDCFF',
             },
-          }}
+          })}
         />
       </Stack.Navigator>
     </NavigationContainer>
