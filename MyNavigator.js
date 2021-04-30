@@ -9,7 +9,7 @@ const Stack = createStackNavigator();
 function MyStack() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Коты' screenOptions={{ gestureEnabled: false }}>
+      <Stack.Navigator initialRouteName='Коты' >
         <Stack.Screen
           name='Коты'
           component={MainScreen}
