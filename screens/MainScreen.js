@@ -36,7 +36,9 @@ const MainScreen = ({ navigation }) => {
           <CatsGenerator cats={cats} goToCat={goToCat} />
         </SafeAreaView>
       </LinearGradient>
+      <SafeAreaView>
       <Search searchCat={searchCat} />
+      </SafeAreaView>
     </View>
   );
 };
