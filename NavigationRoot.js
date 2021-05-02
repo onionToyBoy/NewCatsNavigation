@@ -12,6 +12,7 @@ function NavigationRoot() {
     headerTitleAlign: 'center',
     headerStyle: {
       backgroundColor: '#E1DEDCFF',
+      height: 40,
     },
   });
 
@@ -25,6 +26,7 @@ function NavigationRoot() {
             headerTitleAlign: 'center',
             headerStyle: {
               backgroundColor: '#E1DEDCFF',
+              height: 40,
             },
           }}
         />
