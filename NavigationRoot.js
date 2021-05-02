@@ -6,10 +6,18 @@ import DetailScreen from './screens/DetailScreen';
 
 const Stack = createStackNavigator();
 
-function MyStack() {
+function NavigationRoot() {
+  const createCatsTitle = ({ route }) => ({
+    title: route.params.cat.name,
+    headerTitleAlign: 'center',
+    headerStyle: {
+      backgroundColor: '#E1DEDCFF',
+    },
+  });
+
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Коты' >
+      <Stack.Navigator initialRouteName='Коты'>
         <Stack.Screen
           name='Коты'
           component={MainScreen}
@@ -20,20 +28,10 @@ function MyStack() {
             },
           }}
         />
-        <Stack.Screen
-          name='Cat'
-          component={DetailScreen}
-          options={({route})=>({
-            title:route.params.cat.name,
-            headerTitleAlign: 'center',
-            headerStyle: {
-              backgroundColor: '#E1DEDCFF',
-            },
-          })}
-        />
+        <Stack.Screen name='Cat' component={DetailScreen} options={createCatsTitle} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
-export default MyStack;
+export default NavigationRoot;

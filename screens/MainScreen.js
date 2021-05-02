@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import { Search } from '../components/Search';
-import { CatsGenerator } from '../components/CatsGenerator';
+import { CatsList } from '../components/CatsList';
 import { state } from '../state';
 
 const MainScreen = ({ navigation }) => {
@@ -33,11 +33,11 @@ const MainScreen = ({ navigation }) => {
       <LinearGradient colors={['#992C25FF', '#B5342CFF', '#520E0CFF']} style={styles.container}>
         <SafeAreaView style={styles.container}>
           <Text style={styles.header}>Hello, I am a Header!</Text>
-          <CatsGenerator cats={cats} goToCat={goToCat} />
+          <CatsList cats={cats} goToCat={goToCat} />
         </SafeAreaView>
       </LinearGradient>
       <SafeAreaView>
-      <Search searchCat={searchCat} />
+        <Search searchCat={searchCat} />
       </SafeAreaView>
     </View>
   );

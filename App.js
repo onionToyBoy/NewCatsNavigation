@@ -1,9 +1,9 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import MyStack from './MyNavigator';
+import NavigationRoot from './NavigationRoot';
 
 const App = () => {
-  return <MyStack />;
+  return <NavigationRoot />;
 };
 
 export default App;
