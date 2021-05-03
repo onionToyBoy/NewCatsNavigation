@@ -7,6 +7,7 @@ import { randomFactsGenerator } from '../randomFactsGenerator';
 import { colors } from '../constants/colors';
 
 const CatDetails = ({ route }) => {
+  let { cat } = route.params;
   return (
     <LinearGradient
       colors={[colors.deepBlue, colors.dullBlue, colors.deepPurple]}
@@ -14,8 +15,8 @@ const CatDetails = ({ route }) => {
     >
       <ScrollView style={styles.scroll}>
         <View style={styles.secondContainer}>
-          <Image source={route.params.cat.photo} style={styles.image} />
-          <InfoBlock cat={route.params.cat} />
+          <Image source={cat.photo} style={styles.image} />
+          <InfoBlock cat={cat} />
           <View style={styles.randomFactsBlock}>
             <Text style={styles.randomFactsTitle}>Рандомный факт о котах:</Text>
             <Text style={styles.randomInfo}>{randomFactsGenerator.getRandomFact()}</Text>

@@ -3,15 +3,15 @@ import { StyleSheet, Text, View } from 'react-native';
 import { colors } from '../constants/colors';
 
 export const InfoBlock = ({cat}) => {
-  
+let{bread,age,info}=cat;
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Порода:</Text>
-      <Text style={styles.info}>{cat.bread}</Text>
+      <Text style={styles.info}>{bread}</Text>
       <Text style={styles.title}>Возраст:</Text>
-      <Text style={styles.info}>{cat.age}</Text>
+      <Text style={styles.info}>{age}</Text>
       <Text style={styles.title}>Описание:</Text>
-      <Text style={styles.info}>{cat.info}</Text>
+      <Text style={styles.info}>{info}</Text>
     </View>
   );
 };

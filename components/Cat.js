@@ -4,15 +4,16 @@ import { colors } from '../constants/colors';
 
 export const Cat = ({ cat, goToCat }) => {
   const moveToCatDetails = () => goToCat(cat);
+  let{name, bread, photo, info} = cat;
   return (
     <TouchableOpacity style={styles.outerContainer} onPress={moveToCatDetails}>
       <View style={styles.nameAndBreadBlock}>
-        <Text style={styles.catName}>{cat.name}</Text>
-        <Text style={styles.catBread}>{cat.bread}</Text>
+        <Text style={styles.catName}>{name}</Text>
+        <Text style={styles.catBread}>{bread}</Text>
       </View>
       <View style={styles.innerContainer}>
-        <Image source={cat.photo} style={styles.image} />
-        <Text style={styles.textInfo}>{cat.info}</Text>
+        <Image source={photo} style={styles.image} />
+        <Text style={styles.textInfo}>{info}</Text>
       </View>
     </TouchableOpacity>
   );
