@@ -54,8 +54,8 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   image: {
-    width: '80%',
-    height: 120,
+   height: 180,
     margin: 15,
+    resizeMode:'contain',
   },
 });

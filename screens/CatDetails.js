@@ -36,10 +36,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   image: {
-    width: '90%',
-    height: 180,
+    height: 200,
     margin: 25,
     alignItems: 'flex-start',
+    resizeMode:'contain',
   },
   bottomContainer: {
     width: '90%',
