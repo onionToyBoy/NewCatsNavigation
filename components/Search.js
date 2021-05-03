@@ -2,15 +2,14 @@ import React from 'react';
 import { StyleSheet, TextInput } from 'react-native';
 
 export const Search = ({ searchCat }) => {
+  const searchingCat = text => searchCat(text);
   return (
     <TextInput
       style={styles.search}
       placeholder='Type Here...'
       editable
       maxLength={30}
-      onChangeText={text => {
-        searchCat(text);
-      }}
+      onChangeText={searchingCat}
     />
   );
 };

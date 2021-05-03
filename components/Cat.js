@@ -3,8 +3,9 @@ import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import { colors } from '../constants/colors';
 
 export const Cat = ({ cat, goToCat }) => {
+  const moveToCatDetails = () => goToCat(cat);
   return (
-    <TouchableOpacity style={styles.outerContainer} onPress={() => goToCat(cat)}>
+    <TouchableOpacity style={styles.outerContainer} onPress={moveToCatDetails}>
       <View style={styles.nameAndBreadBlock}>
         <Text style={styles.catName}>{cat.name}</Text>
         <Text style={styles.catBread}>{cat.bread}</Text>
