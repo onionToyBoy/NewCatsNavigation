@@ -17,7 +17,6 @@ export const Search = ({ searchCat }) => {
 const styles = StyleSheet.create({
   search: {
     height: 40,
-    width: '100%',
     backgroundColor: 'white',
     justifyContent: 'flex-end',
     alignItems: 'center',

@@ -43,8 +43,8 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   bottomContainer: {
-    width: '90%',
-    padding: 15,
+    paddingTop: 15,
+    paddingHorizontal:35,
     alignItems: 'center',
     justifyContent: 'center',
   },
