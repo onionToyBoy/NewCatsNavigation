@@ -3,8 +3,6 @@ import { FlatList, View } from 'react-native';
 
 import { Cat } from './Cat';
 
-//Создаём разделитель между генерируемыми объектами:
-
 const renderSeparator = () => {
   return (
     <View

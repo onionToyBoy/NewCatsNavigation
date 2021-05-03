@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import { colors } from '../constants/colors';
 
 export const Cat = ({ cat, goToCat }) => {
   return (
@@ -20,7 +21,7 @@ const styles = StyleSheet.create({
   outerContainer: {
     margin: 20,
     padding: 10,
-    borderColor: '#C1807CFF',
+    borderColor: colors.chalkyClay,
     borderWidth: 1,
     borderRadius: 7,
   },
@@ -41,7 +42,7 @@ const styles = StyleSheet.create({
   },
   nameAndBreadBlock: {
     borderBottomWidth: 1,
-    borderBottomColor: '#C1807CFF',
+    borderBottomColor: colors.chalkyClay,
     padding: 5,
     flexDirection: 'row',
     justifyContent: 'space-between',

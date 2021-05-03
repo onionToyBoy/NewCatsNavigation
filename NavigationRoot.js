@@ -1,8 +1,10 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import MainScreen from './screens/MainScreen';
-import DetailScreen from './screens/DetailScreen';
+import CatsMain from './screens/CatsMain';
+import CatDetails from './screens/CatDetails';
+import { colors } from './constants/colors';
+import { routes } from './constants/routes';
 
 const Stack = createStackNavigator();
 
@@ -11,26 +13,27 @@ function NavigationRoot() {
     title: route.params.cat.name,
     headerTitleAlign: 'center',
     headerStyle: {
-      backgroundColor: '#E1DEDCFF',
+      backgroundColor: colors.brightGray,
       height: 40,
     },
   });
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Коты'>
+      <Stack.Navigator initialRouteName={routes.Cats}>
         <Stack.Screen
-          name='Коты'
-          component={MainScreen}
+          name={routes.CatsMain}
+          component={CatsMain}
           options={{
+            title: 'Коты',
             headerTitleAlign: 'center',
             headerStyle: {
-              backgroundColor: '#E1DEDCFF',
+              backgroundColor: colors.brightGray,
               height: 40,
             },
           }}
         />
-        <Stack.Screen name='Cat' component={DetailScreen} options={createCatsTitle} />
+        <Stack.Screen name={routes.CatDetails} component={CatDetails} options={createCatsTitle} />
       </Stack.Navigator>
     </NavigationContainer>
   );

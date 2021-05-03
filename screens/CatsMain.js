@@ -5,19 +5,16 @@ import LinearGradient from 'react-native-linear-gradient';
 import { Search } from '../components/Search';
 import { CatsList } from '../components/CatsList';
 import { state } from '../state';
+import { colors } from '../constants/colors';
 
-const MainScreen = ({ navigation }) => {
+const CatsMain = ({ navigation }) => {
   const [cats, setCats] = useState(state);
-
-  //Функция перехода на другую страницу:
 
   const goToCat = cat => {
     navigation.navigate('Cat', { cat });
   };
 
-  //Функция поиска по странице:
-
-  const searchCat = function (text) {
+  const searchCat = text => {
     setCats(
       state.filter(
         el =>
@@ -30,7 +27,10 @@ const MainScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <LinearGradient colors={['#992C25FF', '#B5342CFF', '#520E0CFF']} style={styles.container}>
+      <LinearGradient
+        colors={[colors.scarletRed, colors.brightRed, colors.darkRed]}
+        style={styles.container}
+      >
         <SafeAreaView style={styles.container}>
           <Text style={styles.header}>Hello, I am a Header!</Text>
           <CatsList cats={cats} goToCat={goToCat} />
@@ -51,16 +51,6 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     margin: 5,
   },
-  search: {
-    height: 40,
-    width: '100%',
-    backgroundColor: '#FFFFFFAD',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    borderWidth: 1,
-    borderColor: 'black',
-    paddingLeft: 8,
-  },
 });
 
-export default MainScreen;
+export default CatsMain;

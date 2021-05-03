@@ -1,15 +1,17 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { colors } from '../constants/colors';
 
-export const InfoBlock = props => {
+export const InfoBlock = ({cat}) => {
+  
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Порода:</Text>
-      <Text style={styles.info}>{props.cat.bread}</Text>
+      <Text style={styles.info}>{cat.bread}</Text>
       <Text style={styles.title}>Возраст:</Text>
-      <Text style={styles.info}>{props.cat.age}</Text>
+      <Text style={styles.info}>{cat.age}</Text>
       <Text style={styles.title}>Описание:</Text>
-      <Text style={styles.info}>{props.cat.info}</Text>
+      <Text style={styles.info}>{cat.info}</Text>
     </View>
   );
 };
@@ -17,14 +19,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     borderBottomWidth: 1,
-    borderBottomColor: '#2D2A3FFF',
+    borderBottomColor: colors.darkBlue,
     borderTopWidth: 1,
-    borderTopColor: '#2D2A3FFF',
+    borderTopColor: colors.darkBlue,
     padding: 15,
     width: '90%',
   },
   title: {
-    color: '#77857AFF',
+    color: colors.grayGreen,
     fontSize: 15,
     alignItems: 'flex-start',
     marginBottom: 5,

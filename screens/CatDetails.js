@@ -4,10 +4,14 @@ import LinearGradient from 'react-native-linear-gradient';
 
 import { InfoBlock } from '../components/InfoBlock';
 import { randomFactsGenerator } from '../randomFactsGenerator';
+import { colors } from '../constants/colors';
 
-const DetailScreen = ({ route }) => {
+const CatDetails = ({ route }) => {
   return (
-    <LinearGradient colors={['#152A57FF', '#373967FF', '#53223AFF']} style={styles.container}>
+    <LinearGradient
+      colors={[colors.deepBlue, colors.dullBlue, colors.deepPurple]}
+      style={styles.container}
+    >
       <ScrollView style={styles.scroll}>
         <View style={styles.secondContainer}>
           <Image source={route.params.cat.photo} style={styles.image} />
@@ -49,7 +53,7 @@ const styles = StyleSheet.create({
   randomFactsTitle: {
     fontSize: 17,
     fontWeight: 'bold',
-    color: '#351CA7FF',
+    color: colors.brightBlue,
     marginBottom: 10,
   },
   randomInfo: {
@@ -57,4 +61,4 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
 });
-export default DetailScreen;
+export default CatDetails;
