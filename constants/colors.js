@@ -10,4 +10,5 @@ export const colors = {
   deepBlue: '#152A57',
   dullBlue: '#373967',
   deepPurple: '#53223A',
+  dustyRed:'#7E3032',
 };
