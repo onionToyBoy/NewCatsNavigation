@@ -4,7 +4,7 @@ import { colors } from '../constants/colors';
 
 export const Cat = ({ cat, goToCat }) => {
   const moveToCatDetails = () => goToCat(cat);
-  let{name, bread, photo, info} = cat;
+  let { name, bread, photo, info } = cat;
   return (
     <TouchableOpacity style={styles.container} onPress={moveToCatDetails}>
       <View style={styles.nameAndBreadBlock}>
@@ -54,8 +54,8 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   image: {
-   height: 180,
+    height: 180,
     margin: 15,
-    resizeMode:'contain',
+    resizeMode: 'contain',
   },
 });

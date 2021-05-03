@@ -2,8 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { colors } from '../constants/colors';
 
-export const InfoBlock = ({cat}) => {
-let{bread,age,info}=cat;
+export const InfoBlock = ({ cat }) => {
+  let { bread, age, info } = cat;
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Порода:</Text>
@@ -24,7 +24,6 @@ const styles = StyleSheet.create({
     borderTopColor: colors.darkBlue,
     paddingVertical: 15,
     paddingHorizontal: 30,
-
   },
   title: {
     color: colors.grayGreen,
