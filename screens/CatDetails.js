@@ -7,21 +7,22 @@ import { randomFactsGenerator } from '../randomFactsGenerator';
 import { colors } from '../constants/colors';
 
 const CatDetails = ({ route }) => {
-  let { cat } = route.params;
+  const { cat } = route.params;
+  let randomFact = randomFactsGenerator.getRandomFact();
   return (
     <LinearGradient
       colors={[colors.deepBlue, colors.dullBlue, colors.deepPurple]}
       style={styles.container}
     >
       <ScrollView style={styles.container}>
-        <SafeAreaView  style={styles.info}>
+        <SafeAreaView style={styles.info}>
           <Image source={cat.photo} style={styles.image} />
           <InfoBlock cat={cat} />
           <View style={styles.bottomContainer}>
             <Text style={styles.title}>Рандомный факт о котах:</Text>
-            <Text style={styles.bottomInfo}>{randomFactsGenerator.getRandomFact()}</Text>
+            <Text style={styles.bottomInfo}>{randomFact}</Text>
           </View>
-        </SafeAreaView >
+        </SafeAreaView>
       </ScrollView>
     </LinearGradient>
   );
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
     height: 210,
     margin: 25,
     alignItems: 'flex-start',
-    resizeMode:'contain',
+    resizeMode: 'contain',
   },
   bottomContainer: {
     width: '90%',
