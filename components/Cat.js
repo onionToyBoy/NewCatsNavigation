@@ -6,12 +6,12 @@ export const Cat = ({ cat, goToCat }) => {
   const moveToCatDetails = () => goToCat(cat);
   let{name, bread, photo, info} = cat;
   return (
-    <TouchableOpacity style={styles.outerContainer} onPress={moveToCatDetails}>
+    <TouchableOpacity style={styles.container} onPress={moveToCatDetails}>
       <View style={styles.nameAndBreadBlock}>
-        <Text style={styles.catName}>{name}</Text>
-        <Text style={styles.catBread}>{bread}</Text>
+        <Text style={styles.name}>{name}</Text>
+        <Text style={styles.bread}>{bread}</Text>
       </View>
-      <View style={styles.innerContainer}>
+      <View style={styles.imageContainer}>
         <Image source={photo} style={styles.image} />
         <Text style={styles.textInfo}>{info}</Text>
       </View>
@@ -20,24 +20,24 @@ export const Cat = ({ cat, goToCat }) => {
 };
 
 const styles = StyleSheet.create({
-  outerContainer: {
+  container: {
     margin: 20,
     padding: 10,
     borderColor: colors.chalkyClay,
     borderWidth: 1,
     borderRadius: 7,
   },
-  innerContainer: {
+  imageContainer: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  catName: {
+  name: {
     color: 'black',
     fontSize: 17,
     fontWeight: 'bold',
   },
-  catBread: {
+  bread: {
     color: 'black',
     fontSize: 15,
     alignItems: 'flex-end',
@@ -52,7 +52,6 @@ const styles = StyleSheet.create({
   textInfo: {
     color: 'black',
     fontSize: 15,
-    margin: 0,
   },
   image: {
     width: '80%',

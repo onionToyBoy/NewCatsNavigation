@@ -1,4 +1,4 @@
-//Объект, содержащий рандомные факты о котах и генератор выдающий случайный факт:
+
 
 export const randomFactsGenerator = {
   randomFacts: [

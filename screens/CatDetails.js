@@ -13,13 +13,13 @@ const CatDetails = ({ route }) => {
       colors={[colors.deepBlue, colors.dullBlue, colors.deepPurple]}
       style={styles.container}
     >
-      <ScrollView style={styles.scroll}>
-        <View style={styles.secondContainer}>
+      <ScrollView style={styles.container}>
+        <View style={styles.info}>
           <Image source={cat.photo} style={styles.image} />
           <InfoBlock cat={cat} />
-          <View style={styles.randomFactsBlock}>
-            <Text style={styles.randomFactsTitle}>Рандомный факт о котах:</Text>
-            <Text style={styles.randomInfo}>{randomFactsGenerator.getRandomFact()}</Text>
+          <View style={styles.bottomContainer}>
+            <Text style={styles.title}>Рандомный факт о котах:</Text>
+            <Text style={styles.bottomInfo}>{randomFactsGenerator.getRandomFact()}</Text>
           </View>
         </View>
       </ScrollView>
@@ -30,12 +30,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  scroll: {
+  info: {
     flex: 1,
-  },
-  secondContainer: {
-    width: '100%',
-    height: '100%',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -45,19 +41,19 @@ const styles = StyleSheet.create({
     margin: 25,
     alignItems: 'flex-start',
   },
-  randomFactsBlock: {
+  bottomContainer: {
     width: '90%',
     padding: 15,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  randomFactsTitle: {
+  title: {
     fontSize: 17,
     fontWeight: 'bold',
     color: colors.brightBlue,
     marginBottom: 10,
   },
-  randomInfo: {
+  bottomInfo: {
     fontSize: 15,
     marginBottom: 20,
   },
