@@ -15,11 +15,14 @@ const renderSeparator = () => {
   );
 };
 
-export const CatsList = ({ cats, goToCat }) => (
-  <FlatList
-    data={cats}
-    renderItem={({ item }) => <Cat cat={item} goToCat={goToCat} />}
-    keyExtractor={item => item.id.toString()}
-    ItemSeparatorComponent={renderSeparator}
-  />
-);
+export const CatsList = ({ cats, goToCat }) => {
+  const renderItem = ({ item }) => <Cat cat={item} goToCat={goToCat} />;
+  return (
+    <FlatList
+      data={cats}
+      renderItem={renderItem}
+      keyExtractor={item => item.id.toString()}
+      ItemSeparatorComponent={renderSeparator}
+    />
+  );
+};
