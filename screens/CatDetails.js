@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Image, SafeAreaView } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import { InfoBlock } from '../components/InfoBlock';
@@ -14,14 +14,14 @@ const CatDetails = ({ route }) => {
       style={styles.container}
     >
       <ScrollView style={styles.container}>
-        <View style={styles.info}>
+        <SafeAreaView  style={styles.info}>
           <Image source={cat.photo} style={styles.image} />
           <InfoBlock cat={cat} />
           <View style={styles.bottomContainer}>
             <Text style={styles.title}>Рандомный факт о котах:</Text>
             <Text style={styles.bottomInfo}>{randomFactsGenerator.getRandomFact()}</Text>
           </View>
-        </View>
+        </SafeAreaView >
       </ScrollView>
     </LinearGradient>
   );
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   image: {
-    height: 200,
+    height: 210,
     margin: 25,
     alignItems: 'flex-start',
     resizeMode:'contain',
