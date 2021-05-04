@@ -32,10 +32,12 @@ const CatsMain = ({ navigation }) => {
         colors={[colors.scarletRed, colors.brightRed, colors.darkRed]}
         style={styles.container}
       >
-        <Text style={styles.header}>Hello, I am a Header!</Text>
-        <CatsList cats={cats} goToCat={goToCat} />
+        <KeyboardAvoidingView behavior='padding' style={styles.container}>
+          <Text style={styles.header}>Hello, I am a Header!</Text>
+          <CatsList cats={cats} goToCat={goToCat} />
+        </KeyboardAvoidingView>
+        <SearchBar onSearch={onSearch} />
       </LinearGradient>
-      <SearchBar onSearch={onSearch} />
     </SafeAreaView>
   );
 };

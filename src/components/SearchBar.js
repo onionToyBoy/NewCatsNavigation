@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, TextInput } from 'react-native';
 
+import { colors } from '../constants/colors';
+
 export const SearchBar = ({ onSearch }) => {
 
   return (
@@ -17,8 +19,7 @@ export const SearchBar = ({ onSearch }) => {
 const styles = StyleSheet.create({
   search: {
     height: 40,
-    justifyContent: 'flex-end',
-    alignItems: 'center',
     paddingLeft: 8,
+    backgroundColor:colors.white,
   },
 });
