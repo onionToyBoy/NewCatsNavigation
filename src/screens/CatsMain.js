@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, KeyboardAvoidingView } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import { SearchBar } from '../components/SearchBar';
@@ -27,20 +27,16 @@ const CatsMain = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <LinearGradient
         colors={[colors.scarletRed, colors.brightRed, colors.darkRed]}
         style={styles.container}
       >
-        <SafeAreaView style={styles.container}>
-          <Text style={styles.header}>Hello, I am a Header!</Text>
-          <CatsList cats={cats} goToCat={goToCat} />
-        </SafeAreaView>
+        <Text style={styles.header}>Hello, I am a Header!</Text>
+        <CatsList cats={cats} goToCat={goToCat} />
       </LinearGradient>
-      <SafeAreaView>
-        <SearchBar onSearch={onSearch} />
-      </SafeAreaView>
-    </View>
+      <SearchBar onSearch={onSearch} />
+    </SafeAreaView>
   );
 };
 

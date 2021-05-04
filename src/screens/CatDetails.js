@@ -11,21 +11,23 @@ const CatDetails = ({ route }) => {
   const randomFact = randomFactsGenerator.getRandomFact();
 
   return (
-    <LinearGradient
-      colors={[colors.deepBlue, colors.dullBlue, colors.deepPurple]}
-      style={styles.container}
-    >
-      <ScrollView style={styles.container}>
-        <SafeAreaView style={styles.info}>
-          <Image source={cat.photo} style={styles.image} />
-          <InfoBlock cat={cat} />
-          <View style={styles.bottomContainer}>
-            <Text style={styles.title}>Рандомный факт о котах:</Text>
-            <Text style={styles.bottomInfo}>{randomFact}</Text>
+    <SafeAreaView style={styles.container}>
+      <LinearGradient
+        colors={[colors.deepBlue, colors.dullBlue, colors.deepPurple]}
+        style={styles.container}
+      >
+        <ScrollView style={styles.container}>
+          <View style={styles.info}>
+            <Image source={cat.photo} style={styles.image} />
+            <InfoBlock cat={cat} />
+            <View style={styles.bottomContainer}>
+              <Text style={styles.title}>Рандомный факт о котах:</Text>
+              <Text style={styles.bottomInfo}>{randomFact}</Text>
+            </View>
           </View>
-        </SafeAreaView>
-      </ScrollView>
-    </LinearGradient>
+        </ScrollView>
+      </LinearGradient>
+    </SafeAreaView>
   );
 };
 
