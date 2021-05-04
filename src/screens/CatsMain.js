@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, SafeAreaView, KeyboardAvoidingView } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, KeyboardAvoidingView, FlatList, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import { SearchBar } from '../components/SearchBar';
-import { CatsList } from '../components/CatsList';
+import { Cat } from '../components/Cat';
 import { mockData } from '../mockData';
 import { colors } from '../constants/colors';
 import { routes } from '../constants/routes';
 
 const CatsMain = ({ navigation }) => {
   const [cats, setCats] = useState(mockData);
+
+  const renderSeparator = () => <View style={styles.separator} />;
+
+  const renderItem = ({ item }) => <Cat cat={item} onPressItem={onPressItem} />;
 
   const onPressItem = cat => {
     navigation.navigate(routes.CatDetails, { cat });
@@ -34,7 +38,12 @@ const CatsMain = ({ navigation }) => {
       >
         <KeyboardAvoidingView behavior='padding' style={styles.container}>
           <Text style={styles.header}>Hello, I am a Header!</Text>
-          <CatsList cats={cats} onPressItem={onPressItem} />
+          <FlatList
+            data={cats}
+            renderItem={renderItem}
+            keyExtractor={cat => cat.id.toString()}
+            ItemSeparatorComponent={renderSeparator}
+          />
         </KeyboardAvoidingView>
         <SearchBar onSearch={onSearch} />
       </LinearGradient>
@@ -49,6 +58,10 @@ const styles = StyleSheet.create({
   header: {
     alignItems: 'flex-start',
     margin: 5,
+  },
+  separator: {
+    height: 1,
+    backgroundColor: colors.dustyRed,
   },
 });
 

@@ -1,19 +1,10 @@
 import React from 'react';
-import { FlatList, View } from 'react-native';
+import { StyleSheet, FlatList, View } from 'react-native';
 
 import { Cat } from './Cat';
 import { colors } from '../constants/colors';
 
-const renderSeparator = () => {
-  return (
-    <View
-      style={{
-        height: 1,
-        backgroundColor: colors.dustyRed,
-      }}
-    />
-  );
-};
+const renderSeparator = () => (<View style={styles.separator}/>);
 
 export const CatsList = ({ cats, onPressItem }) => {
   const renderItem = ({ item }) => <Cat cat={item} onPressItem={onPressItem} />;
@@ -22,8 +13,14 @@ export const CatsList = ({ cats, onPressItem }) => {
     <FlatList
       data={cats}
       renderItem={renderItem}
-      keyExtractor={item => item.id.toString()}
+      keyExtractor={cat => cat.id.toString()}
       ItemSeparatorComponent={renderSeparator}
     />
   );
 };
+
+const styles = StyleSheet.create({
+  separator: {
+    height: 1,
+    backgroundColor: colors.dustyRed,
+  },})
