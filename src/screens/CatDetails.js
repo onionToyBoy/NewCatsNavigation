@@ -19,7 +19,11 @@ const CatDetails = ({ route }) => {
         <ScrollView style={styles.container}>
           <View style={styles.info}>
             <Image source={cat.photo} style={styles.image} />
-            <InfoBlock cat={cat} />
+            <View style={styles.description}>
+            <InfoBlock info={cat.bread} title={'Порода:'}/>
+            <InfoBlock info={cat.age} title={'Возраст:'}/>
+            <InfoBlock info={cat.info} title={'Описание:'}/>
+            </View>
             <View style={styles.bottomContainer}>
               <Text style={styles.title}>Рандомный факт о котах:</Text>
               <Text style={styles.bottomInfo}>{randomFact}</Text>
@@ -36,15 +40,21 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   info: {
-    flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    paddingHorizontal:25,
   },
   image: {
     height: 210,
     margin: 25,
     alignItems: 'flex-start',
     resizeMode: 'contain',
+  },
+  description:{
+    borderBottomWidth: 1,
+    borderBottomColor: colors.darkBlue,
+    borderTopWidth: 1,
+    borderTopColor: colors.darkBlue,
+    paddingVertical: 15,
   },
   bottomContainer: {
     paddingTop: 15,

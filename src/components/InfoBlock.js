@@ -3,16 +3,12 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import { colors } from '../constants/colors';
 
-export const InfoBlock = ({ cat }) => {
-  const { bread, age, info } = cat;
+export const InfoBlock = ({ info, title }) => {
+  
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Порода:</Text>
-      <Text style={styles.info}>{bread}</Text>
-      <Text style={styles.title}>Возраст:</Text>
-      <Text style={styles.info}>{age}</Text>
-      <Text style={styles.title}>Описание:</Text>
+      <Text style={styles.title}>{title}</Text>
       <Text style={styles.info}>{info}</Text>
     </View>
   );
@@ -20,23 +16,16 @@ export const InfoBlock = ({ cat }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    borderBottomWidth: 1,
-    borderBottomColor: colors.darkBlue,
-    borderTopWidth: 1,
-    borderTopColor: colors.darkBlue,
-    paddingVertical: 15,
-    paddingHorizontal: 30,
+    paddingVertical: 5,
   },
   title: {
     color: colors.grayGreen,
     fontSize: 15,
-    alignItems: 'flex-start',
     marginBottom: 5,
   },
   info: {
     color: colors.black,
     fontSize: 15,
-    marginBottom: 15,
+    marginBottom: 10,
   },
 });
