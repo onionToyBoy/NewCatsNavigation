@@ -1,4 +1,4 @@
-export const state = [
+export const mockData = [
   {
     id: 1,
     name: 'Габи',

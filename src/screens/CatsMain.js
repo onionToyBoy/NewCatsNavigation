@@ -4,12 +4,12 @@ import LinearGradient from 'react-native-linear-gradient';
 
 import { SearchBar } from '../components/SearchBar';
 import { CatsList } from '../components/CatsList';
-import { state } from '../state';
+import { mockData } from '../mockData';
 import { colors } from '../constants/colors';
 import { routes } from '../constants/routes';
 
 const CatsMain = ({ navigation }) => {
-  const [cats, setCats] = useState(state);
+  const [cats, setCats] = useState(mockData);
 
   const goToCat = cat => {
     navigation.navigate(routes.CatDetails, { cat });
@@ -17,7 +17,7 @@ const CatsMain = ({ navigation }) => {
 
   const searchCat = text => {
     setCats(
-      state.filter(
+      mockData.filter(
         cat =>
           cat.name.toLowerCase().includes(text.toLowerCase()) ||
           cat.bread.toLowerCase().includes(text.toLowerCase()) ||
