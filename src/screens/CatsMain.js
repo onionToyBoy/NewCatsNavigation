@@ -15,7 +15,7 @@ const CatsMain = ({ navigation }) => {
     navigation.navigate(routes.CatDetails, { cat });
   };
 
-  const searchCat = text => {
+  const onSearch = text => {
     setCats(
       mockData.filter(
         cat =>
@@ -38,7 +38,7 @@ const CatsMain = ({ navigation }) => {
         </SafeAreaView>
       </LinearGradient>
       <SafeAreaView>
-        <SearchBar searchCat={searchCat} />
+        <SearchBar onSearch={onSearch} />
       </SafeAreaView>
     </View>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, TextInput } from 'react-native';
 
-export const SearchBar = ({ searchCat }) => {
+export const SearchBar = ({ onSearch }) => {
 
   return (
     <TextInput
@@ -9,7 +9,7 @@ export const SearchBar = ({ searchCat }) => {
       placeholder='Type Here...'
       editable
       maxLength={30}
-      onChangeText={searchCat}
+      onChangeText={onSearch}
     />
   );
 };
