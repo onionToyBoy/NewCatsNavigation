@@ -20,9 +20,9 @@ const CatDetails = ({ route }) => {
           <View style={styles.info}>
             <Image source={cat.photo} style={styles.image} />
             <View style={styles.description}>
-            <InfoBlock info={cat.bread} title={'Порода:'}/>
-            <InfoBlock info={cat.age} title={'Возраст:'}/>
-            <InfoBlock info={cat.info} title={'Описание:'}/>
+              <InfoBlock info={cat.bread} title={'Порода:'} />
+              <InfoBlock info={cat.age} title={'Возраст:'} />
+              <InfoBlock info={cat.info} title={'Описание:'} />
             </View>
             <View style={styles.bottomContainer}>
               <Text style={styles.title}>Рандомный факт о котах:</Text>
@@ -41,15 +41,14 @@ const styles = StyleSheet.create({
   },
   info: {
     alignItems: 'center',
-    paddingHorizontal:25,
+    paddingHorizontal: 25,
   },
   image: {
-    height: 210,
+    height:200,
     margin: 25,
-    alignItems: 'flex-start',
     resizeMode: 'contain',
   },
-  description:{
+  description: {
     borderBottomWidth: 1,
     borderBottomColor: colors.darkBlue,
     borderTopWidth: 1,

@@ -4,8 +4,6 @@ import { StyleSheet, Text, View } from 'react-native';
 import { colors } from '../constants/colors';
 
 export const InfoBlock = ({ info, title }) => {
-  
-
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>

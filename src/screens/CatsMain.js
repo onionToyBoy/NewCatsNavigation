@@ -11,7 +11,7 @@ import { routes } from '../constants/routes';
 const CatsMain = ({ navigation }) => {
   const [cats, setCats] = useState(mockData);
 
-  const goToCat = cat => {
+  const onPressItem = cat => {
     navigation.navigate(routes.CatDetails, { cat });
   };
 
@@ -34,7 +34,7 @@ const CatsMain = ({ navigation }) => {
       >
         <KeyboardAvoidingView behavior='padding' style={styles.container}>
           <Text style={styles.header}>Hello, I am a Header!</Text>
-          <CatsList cats={cats} goToCat={goToCat} />
+          <CatsList cats={cats} onPressItem={onPressItem} />
         </KeyboardAvoidingView>
         <SearchBar onSearch={onSearch} />
       </LinearGradient>

@@ -15,8 +15,8 @@ const renderSeparator = () => {
   );
 };
 
-export const CatsList = ({ cats, goToCat }) => {
-  const renderItem = ({ item }) => <Cat cat={item} goToCat={goToCat} />;
+export const CatsList = ({ cats, onPressItem }) => {
+  const renderItem = ({ item }) => <Cat cat={item} onPressItem={onPressItem} />;
 
   return (
     <FlatList

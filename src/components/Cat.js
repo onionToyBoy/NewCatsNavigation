@@ -3,8 +3,8 @@ import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 
 import { colors } from '../constants/colors';
 
-export const Cat = ({ cat, goToCat }) => {
-  const moveToCatDetails = () => goToCat(cat);
+export const Cat = ({ cat, onPressItem }) => {
+  const moveToCatDetails = () => onPressItem(cat);
 
   const { name, bread, photo, info } = cat;
 
@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
   imageContainer: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
   },
   name: {
     color: colors.black,
