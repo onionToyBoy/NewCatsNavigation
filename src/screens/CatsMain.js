@@ -2,25 +2,26 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-import { Search } from '../components/Search';
+import { SearchBar } from '../components/SearchBar';
 import { CatsList } from '../components/CatsList';
 import { state } from '../state';
 import { colors } from '../constants/colors';
+import { routes } from '../constants/routes';
 
 const CatsMain = ({ navigation }) => {
   const [cats, setCats] = useState(state);
 
   const goToCat = cat => {
-    navigation.navigate('Cat', { cat });
+    navigation.navigate(routes.CatDetails, { cat });
   };
 
   const searchCat = text => {
     setCats(
       state.filter(
-        el =>
-          el.name.toLowerCase().includes(text.toLowerCase()) ||
-          el.bread.toLowerCase().includes(text.toLowerCase()) ||
-          el.info.toLowerCase().includes(text.toLowerCase()),
+        cat =>
+          cat.name.toLowerCase().includes(text.toLowerCase()) ||
+          cat.bread.toLowerCase().includes(text.toLowerCase()) ||
+          cat.info.toLowerCase().includes(text.toLowerCase()),
       ),
     );
   };
@@ -37,7 +38,7 @@ const CatsMain = ({ navigation }) => {
         </SafeAreaView>
       </LinearGradient>
       <SafeAreaView>
-        <Search searchCat={searchCat} />
+        <SearchBar searchCat={searchCat} />
       </SafeAreaView>
     </View>
   );

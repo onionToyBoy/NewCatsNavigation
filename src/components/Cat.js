@@ -1,10 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+
 import { colors } from '../constants/colors';
 
 export const Cat = ({ cat, goToCat }) => {
   const moveToCatDetails = () => goToCat(cat);
-  let { name, bread, photo, info } = cat;
+
+  const { name, bread, photo, info } = cat;
+
   return (
     <TouchableOpacity style={styles.container} onPress={moveToCatDetails}>
       <View style={styles.nameAndBreadBlock}>
@@ -33,12 +36,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   name: {
-    color: 'black',
+    color: colors.black,
     fontSize: 17,
     fontWeight: 'bold',
   },
   bread: {
-    color: 'black',
+    color: colors.black,
     fontSize: 15,
     alignItems: 'flex-end',
   },
@@ -50,12 +53,12 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   textInfo: {
-    color: 'black',
+    color: colors.black,
     fontSize: 15,
   },
   image: {
     height: 180,
-    margin: 15,
+    marginVertical: 15,
     resizeMode: 'contain',
   },
 });

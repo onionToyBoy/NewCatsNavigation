@@ -8,7 +8,8 @@ import { colors } from '../constants/colors';
 
 const CatDetails = ({ route }) => {
   const { cat } = route.params;
-  let randomFact = randomFactsGenerator.getRandomFact();
+  const randomFact = randomFactsGenerator.getRandomFact();
+
   return (
     <LinearGradient
       colors={[colors.deepBlue, colors.dullBlue, colors.deepPurple]}
@@ -27,6 +28,7 @@ const CatDetails = ({ route }) => {
     </LinearGradient>
   );
 };
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -59,4 +61,5 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
 });
+
 export default CatDetails;

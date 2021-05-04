@@ -17,6 +17,7 @@ const renderSeparator = () => {
 
 export const CatsList = ({ cats, goToCat }) => {
   const renderItem = ({ item }) => <Cat cat={item} goToCat={goToCat} />;
+
   return (
     <FlatList
       data={cats}

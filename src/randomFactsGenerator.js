@@ -1,5 +1,3 @@
-
-
 export const randomFactsGenerator = {
   randomFacts: [
     'Дверь для домашних кошек изобрел выдающийся ученый Исаак Ньютон.',

@@ -1,9 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+
 import { colors } from '../constants/colors';
 
 export const InfoBlock = ({ cat }) => {
-  let { bread, age, info } = cat;
+  const { bread, age, info } = cat;
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Порода:</Text>
@@ -15,6 +17,7 @@ export const InfoBlock = ({ cat }) => {
     </View>
   );
 };
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -32,7 +35,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   info: {
-    color: 'black',
+    color: colors.black,
     fontSize: 15,
     marginBottom: 15,
   },
