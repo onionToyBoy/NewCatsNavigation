@@ -6,7 +6,7 @@ import { InfoBlock } from '../components/InfoBlock';
 import { randomFactsGenerator } from '../randomFactsGenerator';
 import { colors } from '../constants/colors';
 
-const CatDetails = ({ route }) => {
+export const CatDetails = ({ route }) => {
   const { cat } = route.params;
   const randomFact = randomFactsGenerator.getRandomFact();
 
@@ -72,5 +72,3 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
 });
-
-export default CatDetails;

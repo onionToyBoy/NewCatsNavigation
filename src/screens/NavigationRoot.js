@@ -2,8 +2,8 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import CatsMain from './CatsMain';
-import CatDetails from './CatDetails';
+import {CatsMain} from './CatsMain';
+import {CatDetails} from './CatDetails';
 import { colors } from '../constants/colors';
 import { routes } from '../constants/routes';
 

@@ -8,7 +8,7 @@ import { mockData } from '../mockData';
 import { colors } from '../constants/colors';
 import { routes } from '../constants/routes';
 
-const CatsMain = ({ navigation }) => {
+export const CatsMain = ({ navigation }) => {
   const [cats, setCats] = useState(mockData);
 
   const renderSeparator = () => <View style={styles.separator} />;
@@ -56,7 +56,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
-    alignItems: 'flex-start',
     margin: 5,
   },
   separator: {
@@ -64,5 +63,3 @@ const styles = StyleSheet.create({
     backgroundColor: colors.dustyRed,
   },
 });
-
-export default CatsMain;
