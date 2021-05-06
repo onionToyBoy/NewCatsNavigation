@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, SafeAreaView, KeyboardAvoidingView, FlatList, View } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, KeyboardAvoidingView, FlatList, View, Platform } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import { SearchBar } from '../components/SearchBar';
@@ -14,6 +14,8 @@ export const CatsMain = ({ navigation }) => {
   const renderSeparator = () => <View style={styles.separator} />;
 
   const renderItem = ({ item }) => <Cat cat={item} onPressItem={onPressItem} />;
+
+  const behavior = Platform.OS === 'ios'? 'position':'';
 
   const onPressItem = cat => {
     navigation.navigate(routes.CatDetails, { cat });
@@ -37,8 +39,7 @@ export const CatsMain = ({ navigation }) => {
         style={styles.container}
       >
         <KeyboardAvoidingView
-          behavior='padding'
-          keyboardVerticalOffset={-140}
+          behavior={behavior}
           style={styles.container}
         >
           <Text style={styles.header}>Hello, I am a Header!</Text>
