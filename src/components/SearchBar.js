@@ -4,7 +4,6 @@ import { StyleSheet, TextInput } from 'react-native';
 import { colors } from '../constants/colors';
 
 export const SearchBar = ({ onSearch }) => {
-
   return (
     <TextInput
       style={styles.search}
@@ -20,6 +19,6 @@ const styles = StyleSheet.create({
   search: {
     height: 40,
     paddingLeft: 8,
-    backgroundColor:colors.white,
+    backgroundColor: colors.white,
   },
 });

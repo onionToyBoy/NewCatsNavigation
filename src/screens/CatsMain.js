@@ -36,7 +36,11 @@ export const CatsMain = ({ navigation }) => {
         colors={[colors.scarletRed, colors.brightRed, colors.darkRed]}
         style={styles.container}
       >
-        <KeyboardAvoidingView behavior='padding' style={styles.container}>
+        <KeyboardAvoidingView
+          behavior='padding'
+          keyboardVerticalOffset={-140}
+          style={styles.container}
+        >
           <Text style={styles.header}>Hello, I am a Header!</Text>
           <FlatList
             data={cats}

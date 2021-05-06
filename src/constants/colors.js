@@ -12,5 +12,5 @@ export const colors = {
   deepPurple: '#53223A',
   dustyRed: '#7E3032',
   black: '#000000',
-  white:'#ffffff',
+  white: '#ffffff',
 };
