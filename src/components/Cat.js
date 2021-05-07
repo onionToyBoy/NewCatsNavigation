@@ -4,9 +4,9 @@ import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import { colors } from '../constants/colors';
 
 export const Cat = ({ cat, onPressItem }) => {
-  const moveToCatDetails = () => onPressItem(cat);
-
   const { name, bread, photo, info } = cat;
+
+  const moveToCatDetails = () => onPressItem(cat);
 
   return (
     <TouchableOpacity style={styles.container} onPress={moveToCatDetails}>
@@ -56,8 +56,9 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   image: {
-    height: 180,
-    marginVertical: 15,
+    width: '90%',
+    height: 'auto',
     resizeMode: 'contain',
+    aspectRatio: 1,
   },
 });

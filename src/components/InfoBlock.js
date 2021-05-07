@@ -14,7 +14,7 @@ export const InfoBlock = ({ info, title }) => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingVertical: 5,
+    marginVertical: 5,
   },
   title: {
     color: colors.grayGreen,

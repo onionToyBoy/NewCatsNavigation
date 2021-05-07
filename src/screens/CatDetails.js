@@ -3,11 +3,11 @@ import { StyleSheet, Text, View, ScrollView, Image, SafeAreaView } from 'react-n
 import LinearGradient from 'react-native-linear-gradient';
 
 import { InfoBlock } from '../components/InfoBlock';
-import { randomFactsGenerator } from '../randomFactsGenerator';
+import { randomFactsGenerator } from '../utils/randomFactsGenerator';
 import { colors } from '../constants/colors';
 
 export const CatDetails = ({ route }) => {
-  const { cat } = route.params;
+  const { photo, bread, age, info } = route.params.cat;
   const randomFact = randomFactsGenerator.getRandomFact();
 
   return (
@@ -18,11 +18,11 @@ export const CatDetails = ({ route }) => {
       >
         <ScrollView style={styles.container}>
           <View style={styles.info}>
-            <Image source={cat.photo} style={styles.image} />
+            <Image source={photo} style={styles.image} />
             <View style={styles.description}>
-              <InfoBlock info={cat.bread} title={'Порода:'} />
-              <InfoBlock info={cat.age} title={'Возраст:'} />
-              <InfoBlock info={cat.info} title={'Описание:'} />
+              <InfoBlock info={bread} title={'Порода:'} />
+              <InfoBlock info={age} title={'Возраст:'} />
+              <InfoBlock info={info} title={'Описание:'} />
             </View>
             <View style={styles.bottomContainer}>
               <Text style={styles.title}>Рандомный факт о котах:</Text>
@@ -44,9 +44,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 25,
   },
   image: {
-    height: 200,
-    margin: 25,
+    width: '100%',
+    height: 'auto',
     resizeMode: 'contain',
+    aspectRatio: 1,
   },
   description: {
     borderBottomWidth: 1,

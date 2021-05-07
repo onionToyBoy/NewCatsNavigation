@@ -17,8 +17,8 @@ export const SearchBar = ({ onSearch }) => {
 
 const styles = StyleSheet.create({
   search: {
-    height: 40,
-    paddingLeft: 8,
+    maxHeight: 40,
+    paddingHorizontal: 8,
     backgroundColor: colors.white,
   },
 });
