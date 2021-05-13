@@ -9,6 +9,7 @@ import {
   Platform,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import { useHeaderHeight } from '@react-navigation/stack';
 
 import { SearchBar } from '../components/SearchBar';
 import { Cat } from '../components/Cat';
@@ -18,6 +19,8 @@ import { routes } from '../constants/routes';
 
 export const CatsMain = ({ navigation }) => {
   const [cats, setCats] = useState(mockCats);
+
+  const headerHeight = useHeaderHeight();
 
   const renderSeparator = () => <View style={styles.separator} />;
 
@@ -40,26 +43,27 @@ export const CatsMain = ({ navigation }) => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <LinearGradient
-        colors={[colors.scarletRed, colors.brightRed, colors.darkRed]}
+    <LinearGradient
+      colors={[colors.scarletRed, colors.brightRed, colors.darkRed]}
+      style={styles.container}
+    >
+      <KeyboardAvoidingView
+        behavior={Platform.OS === 'ios' ? 'position' : undefined}
+        keyboardVerticalOffset={Platform.OS === 'ios' ? headerHeight : 0}
         style={styles.container}
       >
-        <KeyboardAvoidingView
-          behavior={Platform.OS === 'ios' ? 'position' : undefined}
-          style={styles.container}
-        >
-          <Text style={styles.header}>Hello, I am a Header!</Text>
-          <FlatList
-            data={cats}
-            renderItem={renderItem}
-            keyExtractor={cat => cat.id.toString()}
-            ItemSeparatorComponent={renderSeparator}
-          />
-        </KeyboardAvoidingView>
+        <Text style={styles.header}>Hello, I am a Header!</Text>
+        <FlatList
+          data={cats}
+          renderItem={renderItem}
+          keyExtractor={cat => cat.id.toString()}
+          ItemSeparatorComponent={renderSeparator}
+        />
+
         <SearchBar onSearch={onSearch} />
-      </LinearGradient>
-    </SafeAreaView>
+      </KeyboardAvoidingView>
+      <SafeAreaView />
+    </LinearGradient>
   );
 };
 

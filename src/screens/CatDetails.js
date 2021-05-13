@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, Image, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import { InfoBlock } from '../components/InfoBlock';
@@ -11,27 +11,25 @@ export const CatDetails = ({ route }) => {
   const randomFact = randomFactsGenerator.getRandomFact();
 
   return (
-    <SafeAreaView style={styles.container}>
-      <LinearGradient
-        colors={[colors.deepBlue, colors.dullBlue, colors.deepPurple]}
-        style={styles.container}
-      >
-        <ScrollView style={styles.container}>
-          <View style={styles.info}>
-            <Image source={photo} style={styles.image} />
-            <View style={styles.description}>
-              <InfoBlock info={bread} title={'Порода:'} />
-              <InfoBlock info={age} title={'Возраст:'} />
-              <InfoBlock info={info} title={'Описание:'} />
-            </View>
-            <View style={styles.bottomContainer}>
-              <Text style={styles.title}>Рандомный факт о котах:</Text>
-              <Text style={styles.bottomInfo}>{randomFact}</Text>
-            </View>
+    <LinearGradient
+      colors={[colors.deepBlue, colors.dullBlue, colors.deepPurple]}
+      style={styles.container}
+    >
+      <ScrollView style={styles.container}>
+        <View style={styles.info}>
+          <Image source={photo} style={styles.image} />
+          <View style={styles.description}>
+            <InfoBlock info={bread} title={'Порода:'} />
+            <InfoBlock info={age} title={'Возраст:'} />
+            <InfoBlock info={info} title={'Описание:'} />
           </View>
-        </ScrollView>
-      </LinearGradient>
-    </SafeAreaView>
+          <View style={styles.bottomContainer}>
+            <Text style={styles.title}>Рандомный факт о котах:</Text>
+            <Text style={styles.bottomInfo}>{randomFact}</Text>
+          </View>
+        </View>
+      </ScrollView>
+    </LinearGradient>
   );
 };
 

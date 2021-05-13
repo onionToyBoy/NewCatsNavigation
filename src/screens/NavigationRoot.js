@@ -13,7 +13,6 @@ const commonHeaderOptions = {
   headerTitleAlign: 'center',
   headerStyle: {
     backgroundColor: colors.brightGray,
-    height: 40,
   },
 };
 
