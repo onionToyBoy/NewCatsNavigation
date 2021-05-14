@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import {
   StyleSheet,
-  Text,
   SafeAreaView,
   KeyboardAvoidingView,
   FlatList,
@@ -47,19 +46,16 @@ export const CatsMain = ({ navigation }) => {
       colors={[colors.scarletRed, colors.brightRed, colors.darkRed]}
       style={styles.container}
     >
+      <FlatList
+        data={cats}
+        renderItem={renderItem}
+        keyExtractor={cat => cat.id.toString()}
+        ItemSeparatorComponent={renderSeparator}
+      />
       <KeyboardAvoidingView
-        behavior={Platform.OS === 'ios' ? 'position' : undefined}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         keyboardVerticalOffset={Platform.OS === 'ios' ? headerHeight : 0}
-        style={styles.container}
       >
-        <Text style={styles.header}>Hello, I am a Header!</Text>
-        <FlatList
-          data={cats}
-          renderItem={renderItem}
-          keyExtractor={cat => cat.id.toString()}
-          ItemSeparatorComponent={renderSeparator}
-        />
-
         <SearchBar onSearch={onSearch} />
       </KeyboardAvoidingView>
       <SafeAreaView />
@@ -70,9 +66,6 @@ export const CatsMain = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  header: {
-    margin: 5,
   },
   separator: {
     height: 1,
