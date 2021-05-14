@@ -6,8 +6,11 @@ export const colors = {
   brightBlue: '#351CA7',
   grayGreen: '#77857A',
   chalkyClay: '#C1807C',
-  brightGray:'#E1DEDC',
+  brightGray: '#E1DEDC',
   deepBlue: '#152A57',
   dullBlue: '#373967',
   deepPurple: '#53223A',
+  dustyRed: '#7E3032',
+  black: '#000000',
+  white: '#ffffff',
 };

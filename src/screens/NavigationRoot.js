@@ -1,21 +1,25 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import CatsMain from './screens/CatsMain';
-import CatDetails from './screens/CatDetails';
-import { colors } from './constants/colors';
-import { routes } from './constants/routes';
+
+import { CatsMain } from './CatsMain';
+import { CatDetails } from './CatDetails';
+import { colors } from '../constants/colors';
+import { routes } from '../constants/routes';
 
 const Stack = createStackNavigator();
 
-function NavigationRoot() {
+const commonHeaderOptions = {
+  headerTitleAlign: 'center',
+  headerStyle: {
+    backgroundColor: colors.brightGray,
+  },
+};
+
+const NavigationRoot = () => {
   const createCatsTitle = ({ route }) => ({
     title: route.params.cat.name,
-    headerTitleAlign: 'center',
-    headerStyle: {
-      backgroundColor: colors.brightGray,
-      height: 40,
-    },
+    ...commonHeaderOptions,
   });
 
   return (
@@ -26,17 +30,13 @@ function NavigationRoot() {
           component={CatsMain}
           options={{
             title: 'Коты',
-            headerTitleAlign: 'center',
-            headerStyle: {
-              backgroundColor: colors.brightGray,
-              height: 40,
-            },
+            ...commonHeaderOptions,
           }}
         />
         <Stack.Screen name={routes.CatDetails} component={CatDetails} options={createCatsTitle} />
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
+};
 
 export default NavigationRoot;

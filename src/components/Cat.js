@@ -1,42 +1,46 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+
 import { colors } from '../constants/colors';
 
-export const Cat = ({ cat, goToCat }) => {
+export const Cat = ({ cat, onPressItem }) => {
+  const { name, bread, photo, info } = cat;
+
+  const moveToCatDetails = () => onPressItem(cat);
+
   return (
-    <TouchableOpacity style={styles.outerContainer} onPress={() => goToCat(cat)}>
+    <TouchableOpacity style={styles.container} onPress={moveToCatDetails}>
       <View style={styles.nameAndBreadBlock}>
-        <Text style={styles.catName}>{cat.name}</Text>
-        <Text style={styles.catBread}>{cat.bread}</Text>
+        <Text style={styles.name}>{name}</Text>
+        <Text style={styles.bread}>{bread}</Text>
       </View>
-      <View style={styles.innerContainer}>
-        <Image source={cat.photo} style={styles.image} />
-        <Text style={styles.textInfo}>{cat.info}</Text>
+      <View style={styles.imageContainer}>
+        <Image source={photo} style={styles.image} />
+        <Text style={styles.textInfo}>{info}</Text>
       </View>
     </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
-  outerContainer: {
+  container: {
     margin: 20,
     padding: 10,
     borderColor: colors.chalkyClay,
     borderWidth: 1,
     borderRadius: 7,
   },
-  innerContainer: {
+  imageContainer: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
   },
-  catName: {
-    color: 'black',
+  name: {
+    color: colors.black,
     fontSize: 17,
     fontWeight: 'bold',
   },
-  catBread: {
-    color: 'black',
+  bread: {
+    color: colors.black,
     fontSize: 15,
     alignItems: 'flex-end',
   },
@@ -48,13 +52,13 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   textInfo: {
-    color: 'black',
+    color: colors.black,
     fontSize: 15,
-    margin: 0,
   },
   image: {
-    width: '80%',
-    height: 120,
-    margin: 15,
+    width: '90%',
+    height: 'auto',
+    resizeMode: 'contain',
+    aspectRatio: 1,
   },
 });
